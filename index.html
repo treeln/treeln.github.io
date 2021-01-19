@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title> TreeLance Academy | Official Website</title>
+        <meta name="description" content="Website of TreeLance academy" />
+        <meta name="keywords" content="JEE, JEE mains, WBJEE, NEET" />
+        <meta name="author" content="Suman" />
+        
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800|Clicker+Script' rel='stylesheet' type='text/css'>
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100&display=swap" rel="stylesheet">
+    <script
+     src="https://code.jquery.com/jquery-3.5.1.slim.js"
+    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+    crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		<div class="container demo-2">
+            <nav id="navbar">
+                <h4 id="homebtn">Home</h4>
+                <h4 id="aboutbtn">About</h4>
+                <h4 id="testsbtn">Tests</h4>
+            </nav>
+			<div class="content">
+                <div id="large-header" class="large-header">
+                    <canvas id="demo-canvas"></canvas>
+                    <h1 class="main-title">TreeLance Academy</span></h1>
+                </div>
+                
+            </div>
+            <div class="home" id="home">
+                
+
+
+            </div>
+            <div class="about" id="about">
+                
+
+                
+            </div>
+            <div class="tests" id="tests">
+                
+
+
+            </div>
+            <p class="ref">Image from <a href="https://stocksnap.io//">Stocksnap</a>. </p>
+		</div><!-- /container -->
+        <script src="js/rAF.js"></script>
+        <script src="js/demo-2.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                    var homebtn = $('#homebtn');
+                    var h = $('#home').height();
+                    var a = $('#about').height();
+                    var t = $('#tests').height();
+                    homebtn.click(function() {
+                        $(window).scrollTop(h);
+                    });
+                    $('#aboutbtn').click(function() {
+                        $(window).scrollTop(a+h);
+                    });
+                    $('#testsbtn').click(function() {
+                        $(window).scrollTop(a+h+t);
+                    });
+                }); 
+
+
+
+
+        </script>
+	</body>
+</html>
