@@ -177,6 +177,33 @@ p.ref {
 	font-weight: 400;
 	font-size: 1em;
 }
+.tests_content
+{
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	border: 2px solid #1abc9c;
+	background-color: #fff;
+}
+.tests_content div
+{
+	width: 33.33%;
+	background-color: #fff;
+	color : #000;
+	float: left;
+	text-align: center;
+	border: 2px solid #aaa;
+	border-bottom: none;
+	font-family: 'Raleway', Calibri, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 1.2em;
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 40em) {
 
