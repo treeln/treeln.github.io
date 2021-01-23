@@ -48,14 +48,36 @@
             <div class="tests" id="tests">
                 
                 <div class="tests_content">
-                    <div class="tc1">
+                    <div class="tcdiv tc1">
                         <h5><i class="fas fa-cubes"></i> Physics </h5>
+                        
                     </div>
-                    <div class="tc2">
+                    <div class=" tcdiv tc2">
                         <h5> <i class="fab fa-battle-net"></i> Chemistry</h5>
+                        
                     </div>
-                    <div class="tc3">
+                    <div class=" tcdiv tc3">
                         <h5><i class="fas fa-superscript"></i> Mathematics </h5>
+                        
+                    </div>
+                    <div class="tc_content tcphy">
+                        <ul>
+                            <li><i class="fas fa-arrows-alt-v"></i><a href="Measurement.html" target="_blank"> Units & Measurement</a></li>
+                            <li><i class="fas fa-arrow-right"></i><a href="vectors.html" target="_blank"> Vectors </a></li>
+                            <li><i class="fas fa-cube"></i> <a href="dimensions.html" target="_blank"> Dimensions</a></li>
+                            <li><i class="fas fa-biking"></i><a href="kinematics.html" target="_blank"> Kinematics</a></li>
+                        </ul>
+                        
+                        
+                        
+                        
+
+                    </div>
+                    <div class="tc_content tcchem">
+                        
+                    </div>
+                    <div class="tc_content tcmath">
+                        
                     </div>
                 </div>
 
@@ -65,27 +87,7 @@
 		</div><!-- /container -->
         <script src="js/rAF.js"></script>
         <script src="js/demo-2.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-
-                    var homebtn = $('#homebtn');
-                    var h = $('#home').height();
-                    var a = $('#about').height();
-                    var t = $('#tests').height();
-                    homebtn.click(function() {
-                        $(window).scrollTop(h);
-                    });
-                    $('#aboutbtn').click(function() {
-                        $(window).scrollTop(a+h);
-                    });
-                    $('#testsbtn').click(function() {
-                        $(window).scrollTop(a+h+t);
-                    });
-                }); 
-
-
-
-
-        </script>
+        <script type="text/javascript" src="js/script.js"></script>
+        
 	</body>
 </html>
