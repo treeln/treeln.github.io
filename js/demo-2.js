@@ -25,7 +25,7 @@
 
         home.style.height = height+ 'px';
         about.style.height = height+ 'px';
-        test.style.height = height+ 'px';
+        test.style.height = (height*1.2)+ 'px';
 
         // create particles
         circles = [];

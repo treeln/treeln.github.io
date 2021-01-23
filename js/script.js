@@ -12,10 +12,10 @@
                         $(window).scrollTop(h);
                     });
                     $('#aboutbtn').click(function() {
-                        $(window).scrollTop(a+h);
+                        $(window).scrollTop(2*h);
                     });
                     $('#testsbtn').click(function() {
-                        $(window).scrollTop(a+h+t);
+                        $(window).scrollTop(3*h);
                     });
 
 ////////////////////////////////////////////////////////////
@@ -43,8 +43,15 @@
                         $('.tc2').css({'background-color':'#ccc','color':'#000'});
                         $('.tc1').css({'background-color':'#ccc','color':'#000'});
                     });
+                        $('#instrct_bttn').click(function(){
+                                $('#instrct').show("slow");
 
 
+                        });
+
+                        $('#close_inst').click(function() {
+                                $('#instrct').hide(2000);
+                        });
 
 
                 }); 
