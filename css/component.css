@@ -1,6 +1,7 @@
 html
 {
 	scroll-behavior: smooth;
+	
 }
 
 
@@ -164,6 +165,24 @@ html
 	top: 10%;
 	left: 10%;
 	display: none;
+}
+#homescrollbtn
+{
+	position: fixed;
+	z-index: 50;
+	bottom: 5%;
+	right: 5%;
+	font-size: 1.3em;
+	background-color: #34495e;
+	color: #fff;
+	border-radius: 20%;
+	padding: 0.5em;
+	cursor: pointer;
+	display: none;
+}
+#homescrollbtn:hover
+{
+	color: #1abc9c;
 }
 #scrnsht
 {
