@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Test site</title>
+		<meta name="description" content="Test site" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/3557a83e60.js" crossorigin="anonymous"></script>
+		<style>
+		h1,h2,h3,h4,h5,h6,label,input,div,nav
+		{
+			font-family: 'Open Sans', sans-serif;
+		}
+		nav	{
+			width : 100%;
+			background : #2c3e50;
+			position : fixed;
+			top : 0;
+			left : 0;
+			z-index : 10;
+			}
+
+		nav h2
+		{
+			text-align : center;
+			color : #fff;
+			padding : 0.5em 0;
+		}
+		#sidebar
+		{
+			z-index : 9;
+			height : 100%;
+			background : #eee;
+			position : fixed;
+			width : 30%;
+			right : 0;
+		}
+		#navbuttoncontainer
+		{
+			width : 80%;
+			display : block;
+			padding : 0.5em 3em;
+			overflow : auto;
+			
+		}
+		.navbtn
+		{
+			border-radius : 100%;
+			-webkit-border-radius : 100%;
+			padding : 0.5em;
+			background : #34495e;
+			color : #fff;
+			height : 1.5em;
+			width : 1.5em;
+			padding : 0.5em 0.5em;
+			text-align : center;
+			float : left;
+			margin : 0.2em;
+			transition : 0.3s;
+			font-size : 1.5em; 
+			cursor : pointer;
+			vertical-align : top;
+			display : block-inline;
+		}
+		.navbtn:first-child
+		{
+			color : #16a085;
+		}
+		#workoutspace
+		{
+			padding : 200px 2em;
+		}
+		.challengecap
+		{
+			display : inline-block;
+			padding : 1em;
+			background : #16a085;
+			color : #fff;
+			overflow-x : auto;
+			width : 12em;
+			cursor : pointer;
+			float : left;
+			text-align : center;
+			margin : 1em 6em;
+			opacity : 0;
+			transition : 0.5s;
+		}
+		.challengecap i
+		{
+			text-align : center;
+			font-size : 1.5em;
+			color : #fff;
+		}
+		.questn
+		{
+			width : 70%;
+		}
+		#optiona,#optionb,#optionc,#optiond
+		{
+			padding : 1em;
+			background : #bdc3c7;
+			color : #2c3e50;
+			margin : 0.1em;
+			border : 0.2em  solid transparent;
+			width : 150px;
+			float : left;
+			transition : 0.2s;
+			cursor : pointer;
+		}
+		.ctrlbuttons
+		{
+			position : fixed;
+			z-index : 9;
+			bottom : 0;
+			left : 0
+		}
+		#reviewbtn, #submitbtn, #removereview, #exit
+		{
+			padding : 1em;
+			background : #2c3e50;
+			color : #16a085;
+			float : left ;
+			margin : 0.1em;
+			cursor : pointer;
+			text-decoration : none;
+		}
+		#resultsdash
+		{
+			background : #bdc3c7;
+			-webkit-box-shadow: 5px 9px 14px 0px rgba(50, 50, 50, 0.75);
+			-moz-box-shadow:    5px 9px 14px 0px rgba(50, 50, 50, 0.75);
+			box-shadow:         5px 9px 14px 0px rgba(50, 50, 50, 0.75);
+			display : none;
+			position : fixed;
+			z-index : 20;
+			height : 50%;
+			width : 50%;
+			top : 25%;
+			left : 25%;
+			color : #fff;
+			text-align : center;
+			padding : 1em;
+			font-size : 2em;
+		}
+		.Timer
+		{
+			padding : 5em 1em 0.5em 1em;
+			text-align : center;
+		}
+		</style>
+		<script
+  			src="https://code.jquery.com/jquery-3.5.1.slim.js"
+  			integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+ 			 crossorigin="anonymous">
+		</script>
+	</head>
+	<body>
+	
+	<nav><h2>Physics - Dimensions<span> </span></h2></nav>
+	<div id="sidebar">
+		<h3 class="Timer" value="">Timer</h3>
+		<div id="navbuttoncontainer">
+			<div class="navbtn" value="1" id="firstnav">1</div>
+			<div class="navbtn" value="2">2</div>
+			<div class="navbtn" value="3">3</div>
+			<div class="navbtn" value="4">4</div>
+			<div class="navbtn" value="5">5</div>
+			<div class="navbtn" value="6">6</div>
+			<div class="navbtn" value="7">7</div>
+			<div class="navbtn" value="8">8</div>
+			<div class="navbtn" value="9">9</div>
+			<div class="navbtn" value="10">10</div>
+			<div class="navbtn" value="11">11</div>
+			<div class="navbtn" value="12">12</div>
+			<div class="navbtn" value="13">13</div>
+			<div class="navbtn" value="14">14</div>
+			<div class="navbtn" value="15">15</div>
+			<div class="navbtn" value="16">16</div>
+			<div class="navbtn" value="17">17</div>
+			<div class="navbtn" value="18">18</div>
+			<div class="navbtn" value="19">19</div>
+			<div class="navbtn" value="20">20</div>
+		</div>
+		<div class="challengecap"><i class="fas fa-rocket"></i> Challenge mode </div>
+	</div>
+
+	<div id="resultsdash"></div>
+
+	
+	<div id="workoutspace">
+		<h4 class="questn"></h4>
+		<div id="options">
+			<div id="optiona" class="options" value=""></div>
+			<div id="optionb" class="options" value=""></div>
+			<div id="optionc" class="options" value=""></div>
+			<div id="optiond" class="options" value=""></div>
+		</div>
+		
+		<div class="ctrlbuttons">
+			<div id="reviewbtn"> Mark for Review </div>
+			<div id="removereview"> Remove review </div>
+			<div id="submitbtn"> Finish & Submit </div>
+			<a href="" id="exit"> Exit & view solutions </a>
+		</div>
+	</div>
+<!-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////*************************DEVELOPED BY SUMAN********************************* ///////////////////////
+///////////////////////////////////////////XXX/////////////X///X///////////XXX///////////////////////////////////////////////////
+//////////////////////////////////////////XXX////////////XXXXX//////////////XXX//////////////////////////////////////////////////
+/////////////////////////////////////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/////////////////////////////////////////////////
+////////////////////////////////////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX////////////////////////////////////////////////
+/////////////////////////////////////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/////////////////////////////////////////////////
+///////////////////////////////////////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX///////////////////////////////////////////////////
+/////////////////////////////////////////////XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/////////////////////////////////////////////////////
+///////////////////////////////////////////////XX////XXX///XXX////XXX////XX/////////////////////////////////////////////////////
+////////////////////////////////////////////////X/////X/////X//////X/////X//////////////////////////////////////////////////////
+-->
+		
+				
+	
+	<script>
+	
+
+//jquery functions start here
+	$(document).ready(function() {
+		
+		
+
+		var question=['Dimension of velocity gradient is:',
+		'A relation for energy is defined by E = at<sup>2</sup> + ½ bt<sup>3</sup>. What are the dimensions of a and b ',
+		'In the formula X=2YZ2, X and Z have the dimension of capacitance and velocity respectively. What are the dimensions of Y?',
+		'Dimensional formulae of Magnetic field and electric dipole moment are:',
+		'The dimensional formula for mass if Energy E, Length L and time T are taken as fundamental units:',
+		'The ratio of dimension of Planck’s constant and that of moment of inertia is the dimension of:',
+		'If energy E, velocity V and force F are taken as fundamental quantities, the dimensional formula for mass:',
+		'In an experiment, mass of the bob M, potential energy of the bob at rest E and length of the string L has been measured. Then the possible 		dimensionally correct expression for Time period T would be:',
+		'The dimensional formula for Young’s modulus and strain are:',
+		'The dimensional of current, in terms of Magnetic field B, mass M and time T:',
+		'The dimensional formula for Gas Constant:',
+		'Which of the following sets have different dimensions?',
+		'For equation of wave given by:  y=ω((<sup>x</sup>&frasl;<sub>X</sub>)-k) , where  is angular velocity, the dimensions of X and k are given by :',
+		'In the relation  p= (\&#x3B1/\&#x3B2)e<sup>-αZ/kθ</sup> , p is the pressure, Z is distance, k is Boltzmann constant and  is the temperature. The dimensional formula for  will be 		:',
+		'Find the values of  and  , for the relation \&#x3B1/t<sup>2</sup>=Fv+ \&#x3B2/x<sup>2</sup> to be dimensionally consistent :',
+		'The dimensions of a and b, in the formula p = (nRTe<sup>a/RTV</sup>)/(V-b), are :',
+		'For \&#x222b dx/(2ax- x<sup>2</sup>)= a<sup>n</sup>sin<sup>-1</sup>((x/a)-1) to be dimensionally balanced, the value of n should be'
+		];
+
+
+		var opta=['[M<sup>0</sup>L<sup>0</sup>T<sup>-1</sup>]',
+			' [M<sup></sup>L<sup>2</sup>T<sup>0</sup>] and [M<sup></sup>L<sup>2</sup>T<sup></sup>]',
+			'[M<sup>-1</sup>L<sup>0</sup>T<sup>-2</sup>A<sup>2</sup>]',
+			'[M<sup></sup>L<sup>0</sup>T<sup>2</sup>A<sup>-1</sup>] and [M<sup>0</sup>L<sup></sup>T<sup></sup>A<sup></sup>]',
+			'[E<sup></sup>L<sup>-2</sup>T<sup>3</sup>]',
+			'frequency',
+			'[E<sup></sup>V<sup>2</sup>F<sup></sup>]',
+			'[M<sup></sup>L<sup>2</sup>E<sup></sup>]<sup>1/2</sup>',
+			'[M<sup></sup>L<sup>-1</sup>T<sup>2</sup>] and [M<sup>0</sup>L<sup></sup>T<sup>0</sup>]',
+			'[M<sup></sup>B<sup></sup>T<sup>2</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup>2</sup>K<sup>-1</sup>mol<sup>-1</sup>]',
+			'Pressure, Young’s modulus, Stress',
+			'[L<sup>-1</sup>] and [T]',
+			'[M<sup>0</sup>L<sup>2</sup>T<sup>0</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup></sup>] and [M<sup></sup>L<sup>4</sup>T<sup>3</sup>]',
+			'[M<sup></sup>L<sup>5</sup>T<sup></sup>] and [L<sup>5</sup>]',
+			'2'
+			];
+		
+		var optb=['[M<sup>0</sup>L<sup>-1</sup>T<sup>-1</sup>]',
+			' [M<sup></sup>L<sup>-2</sup>T<sup>0</sup>] and [M<sup></sup>L<sup>-2</sup>T<sup></sup>]',
+			'[M<sup>-1</sup>L<sup>-4</sup>T<sup>6</sup>A<sup>2</sup>]',
+			'[M<sup></sup>L<sup>0</sup>T<sup>2</sup>A<sup>-1</sup>] and [M<sup>0</sup>L<sup></sup>T<sup></sup>A<sup>2</sup>]',
+			'[E<sup></sup>L<sup>-3</sup>T<sup></sup>]',
+			'angular momentum',
+			'[E<sup>2</sup>V<sup>1</sup>F<sup>-1</sup>]',
+			'[M<sup></sup>L<sup>-2</sup>E<sup></sup>]<sup>1/2</sup>',
+			'[M<sup></sup>L<sup>-1</sup>T<sup>2</sup>] and [M<sup></sup>L<sup></sup>T<sup>0</sup>]',
+			'[M<sup></sup>B<sup>-1</sup>T<sup>2</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup></sup>K<sup></sup>mol<sup>-1</sup>]',
+			'Heat, Work done, Energy',
+			'[L<sup></sup>] and [T<sup>0</sup>]',
+			'[M<sup>0</sup>L<sup></sup>T<sup>-1</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup>2</sup>] and [M<sup></sup>L<sup>2</sup>T<sup>4</sup>]',
+			'[M<sup></sup>L<sup>3</sup>T<sup>2</sup>] and [L<sup>3</sup>]',
+			'3'
+			];
+		
+		var optc=['[M<sup>0</sup>L<sup></sup>T<sup>-1</sup>]',
+			' [M<sup></sup>L<sup>-2</sup>T<sup>-4</sup>] and [M<sup></sup>L<sup>2</sup>T<sup>-5</sup>]',
+			'[M<sup>1</sup>L<sup>0</sup>T<sup>-2</sup>A<sup>2</sup>]',
+			'[M<sup></sup>L<sup></sup>T<sup>2</sup>A<sup>-1</sup>] and [M<sup>0</sup>L<sup></sup>T<sup>2</sup>A<sup></sup>]',
+			'[E<sup></sup>L<sup>-2</sup>T<sup>2</sup>]',
+			'time',
+			'[E<sup></sup>V<sup>-2</sup>F<sup>0</sup>]',
+			'[M<sup></sup>L<sup>2</sup>E<sup></sup>]<sup></sup>',
+			'[M<sup></sup>L<sup>-1</sup>T<sup>2</sup>] and [M<sup>0</sup>L<sup>0</sup>T<sup>0</sup>]',
+			'[M<sup></sup>B<sup>2</sup>T<sup>2</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup>2</sup>K<sup></sup>mol<sup>-2</sup>]',
+			'EMF, Potential difference and Electric potential',
+			'[L<sup></sup>] and [T<sup>2</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup>-1</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup></sup>] and [M<sup></sup>L<sup>2</sup>T<sup>4</sup>]',
+			'[M<sup></sup>L<sup>5</sup>T<sup>2</sup>] and [L<sup>3</sup>]',
+			'0'
+			];
+
+		var optd=['[M<sup></sup>L<sup>0</sup>T<sup>-1</sup>]',
+			' [M<sup></sup>L<sup>2</sup>T<sup>-4</sup>] and [M<sup></sup>L<sup>-2</sup>T<sup>-5</sup>]',
+			'[M<sup>-1</sup>L<sup></sup>T<sup>2</sup>A<sup>2</sup>]',
+			'[M<sup>0</sup>L<sup></sup>T<sup>2</sup>A<sup>-1</sup>] and [M<sup>0</sup>L<sup></sup>T<sup></sup>A<sup></sup>]',
+			'[E<sup>2</sup>L<sup>-2</sup>T<sup>3</sup>]',
+			'velocity',
+			'[E<sup></sup>V<sup>-2</sup>F<sup></sup>]',
+			'[M<sup></sup>L<sup>2</sup>E<sup>-1</sup>]<sup>1/2</sup>',
+			'[M<sup></sup>L<sup>-1</sup>T<sup>1</sup>] and [M<sup>0</sup>L<sup>0</sup>T<sup>0</sup>]',
+			'[M<sup>2</sup>B<sup></sup>T<sup>2</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup>2</sup>K<sup>-1</sup>mol<sup>0</sup>]',
+			'Dipole moment, Electric flux and Electric  field',
+			'[L<sup></sup>] and [T<sup></sup>]',
+			'[M<sup>0</sup>L<sup>2</sup>T<sup>1</sup>]',
+			'[M<sup></sup>L<sup>2</sup>T<sup>2</sup>] and [M<sup></sup>L<sup>4</sup>T<sup>3</sup>]',
+			'[M<sup></sup>L<sup>5</sup>T<sup>2</sup>] and [L<sup></sup>]',
+			'1'
+			];
+		
+		var ans=[];
+
+		var response=[];
+		var check = 0;
+		var store=1;
+		var marks = 0;
+		var obj=$('#firstnav');
+
+///////////////////////////////////////////////////////////////
+		//Navigation hover function
+//////////////////////////////////////////////////////////////
+
+		$('.navbtn').hover(function(){
+			$(this).css('background','#7f8c8d');
+		}, function() {
+			$(this).css('background','#34495e');
+		});
+		
+///////////////////////////////////////////////////////////////
+		//Questions loader
+//////////////////////////////////////////////////////////////
+		$('.questn').html(store+") "+question[0]);
+		$('#optiona').html("A) "+opta[0]);
+		$('#optionb').html("B) " +optb[0]);
+		$('#optionc').html("C) " +optc[0]);
+		$('#optiond').html("D) " +optd[0]);
+
+		$('#optiona').attr('value',opta[0]);
+		$('#optionb').attr('value',optb[0]);
+		$('#optionc').attr('value',optc[0]);
+		$('#optiond').attr('value',optd[0]);
+
+///////////////////////////////////////////////////////////////
+		//Navigation on-click events
+//////////////////////////////////////////////////////////////
+
+		$('.navbtn').click(function(){
+			//store=$(this).attr('value');
+			obj=$(this);
+			store=obj.attr('value');
+			//alert(store);
+			$('.navbtn').css('color','#fff');
+			check=1;
+			if(check==1) {
+				$(this).css('color','#16a085');
+				}
+			$('.questn').html(store+") "+question[store-1]);
+			$('#optiona').html("A) " +opta[store-1]);
+			$('#optionb').html("B) " +optb[store-1]);
+			$('#optionc').html("C) " +optc[store-1]);
+			$('#optiond').html("D) " +optd[store-1]);
+			
+			$('#optiona').attr('value',opta[store-1]);
+			$('#optionb').attr('value',optb[store-1]);
+			$('#optionc').attr('value',optc[store-1]);
+			$('#optiond').attr('value',optd[store-1]);
+			
+			$('.options').css('background','#bdc3c7');
+			$('.options').css('color','#2c3e50');
+			if(response[store-1]==opta[store-1])
+			{
+				$('#optiona').css('background','#16a085');
+				$('#optiona').css('color','#fff');
+			}
+			else if(response[store-1]==optb[store-1])
+			{
+				$('#optionb').css('background','#16a085');
+				$('#optionb').css('color','#fff');
+			}
+			else if(response[store-1]==optc[store-1])
+			{
+				$('#optionc').css('background','#16a085');
+				$('#optionc').css('color','#fff');
+			}
+			else if(response[store-1]==optd[store-1])
+			{
+				$('#optiond').css('background','#16a085');
+				$('#optiond').css('color','#fff');
+			}
+		});
+///////////////////////////////////////////////////////////////
+		//Review marking
+//////////////////////////////////////////////////////////////
+
+		$('#reviewbtn').click(function() {
+			obj.css('border-radius','0');
+		});
+		$('#removereview').click(function() {
+			obj.css('border-radius','100%');
+		});
+///////////////////////////////////////////////////////////////
+		//Options hover 
+//////////////////////////////////////////////////////////////
+		$('.options').hover(function(){
+			$(this).css('border','0.2em solid #1abc9c');
+		}, function() {
+			$(this).css('border','0.2em  solid transparent');
+		});
+///////////////////////////////////////////////////////////////
+		//Response retrieval 
+//////////////////////////////////////////////////////////////
+		$('.options').click(function() {
+			response[store-1] = $(this).attr('value');
+			
+			$('.options').css('background','#bdc3c7'); //resets bg to base
+			$('.options').css('color','#2c3e50');
+			
+			$(this).css('background','#16a085'); //sets bg to highlighted color
+			$(this).css('color','#fff');
+			//alert(store);
+			//alert(response[store-1]);
+		});
+		
+///////////////////////////////////////////////////////////////
+		//Marks calculator
+//////////////////////////////////////////////////////////////
+		$('#submitbtn').click(function() {
+			for(i=0;i<response.length;i++)
+			{
+				if(response[i]==ans[i])
+					{
+					marks=marks+4;
+					}
+				else if(response[i]==null)
+					{
+					marks=marks+0;
+					}
+				else
+					{
+					marks--;
+					}
+			}
+			//alert("Your total marks is :"+marks);
+			$('#resultsdash').html("Your total marks is : "+marks);
+			$('#resultsdash').css('display','block');
+		});
+
+///////////////////////////////////////////////////////////////
+		//Timer
+//////////////////////////////////////////////////////////////
+
+var start = new Date;
+var x = 2400;
+var timer=0;
+setInterval(function() {
+	timer=Math.round(x-((new Date - start) / 1000));
+	if(timer>=0)
+	{
+   	$('.Timer').text(timer + " Seconds ");
+	$('.challengecap').css('opacity','1');
+	}
+	if(timer==0)
+		{
+		for(i=0;i<response.length;i++)
+			{
+				if(response[i]==ans[i])
+					{
+					marks=marks+4;
+					}
+				else if(response[i]==null)
+					{
+					marks=marks+0;
+					}
+				else
+					{
+					marks--;
+					}
+			}
+			//alert("Your total marks is :"+marks);
+			$('#resultsdash').html("Your total marks is : "+marks);
+			$('#resultsdash').css('display','block');
+			
+		}
+	}, 1000);
+	
+
+
+
+///////////////////////////////////////////////////////////////
+		//Challenge mode 
+//////////////////////////////////////////////////////////////
+		
+		if(timer>1800)
+		{
+			$('.challengecap').css('display','none');
+		}
+		var checkvar=0;
+		$('.challengecap').click(function() {
+			$(this).css('background','#e74c3c');
+			if(checkvar==0)
+			{
+				x=1800-(2400-timer);
+				$(this).html('<i class="fas fa-rocket"></i> Challenge mode on');
+				checkvar=1;
+			}
+		});
+
+
+	
+	
+});
+
+	</script>
+	</body>
+</html>
