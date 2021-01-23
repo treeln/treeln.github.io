@@ -79,6 +79,16 @@ p.ref {
 {
 	padding : 1.5em;
 }
+.tc_content ul
+{
+	height: 80%;
+	display: block;
+}
+.tc_content ul li
+{
+
+	display: inline-block;
+}
 .tc_content ul li a:hover
 {
 	color: #1abc9c;
