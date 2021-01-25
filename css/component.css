@@ -35,9 +35,35 @@ html
 	-webkit-transform: translate3d(-50%,-50%,0);
 	transform: translate3d(-50%,-50%,0);
 }
+.circ_cont
+{
+	padding-top: 200px;
+	margin: auto;
+	width: 60%;
+	height: 60%;
 
-
-
+}
+.circ_cont p
+{
+	font-size: 1.4em;
+	text-align: justify;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	padding-right: 50px;
+	border-right: 8px solid #16a085;
+}
+.circle
+{
+	float: left;
+	height: 200px;
+	width: 200px;
+	shape-outside: circle();
+}
+.circle img
+{
+	height: 95%;
+	width: 95	%;
+}
 .demo-2 .main-title {
 	font-family: 'Clicker Script', cursive;
 	font-weight: normal;
@@ -97,7 +123,7 @@ html
 
 #home
 {
-	background-color: 
+	
 }
 #about
 {
